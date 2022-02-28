@@ -1,17 +1,34 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="Home" class="Components">
+    <div class="Components-Block">
+      <yuv-input id="asd" type="text" label="adasd" v-model="test"/>
+    </div>
   </div>
   <router-view/>
 </template>
 
+<script>
+import { ref } from 'vue'
+
+export default {
+  setup () {
+    const test = ref('')
+
+    return {
+      test
+    }
+  }
+}
+</script>
+
 <style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+@import "Styles/ResetStyle.styl"
+@import "Styles/Variable.styl"
+
+#Home
+  padding 20px
+.Components
+  &-Blocks
+    display flex
+    justify-content space-between
 </style>
