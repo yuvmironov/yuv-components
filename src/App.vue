@@ -7,7 +7,7 @@
       <yuv-button/>
     </div>
     <div class="Components-Block">
-      <span class="icon icon-mail-add">
+      <span class="icon icon-alert">
       </span>
     </div>
   </div>
