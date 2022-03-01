@@ -26,7 +26,7 @@ export default {
     },
     type: {
       type: String,
-      default: 'base'
+      default: 'danger'
     },
     fun: {
       type: Function,
@@ -54,25 +54,25 @@ export default {
       padding 10px 16px
   &__Sheme
     &__base
-      background var(--primary---default)
-      color var(--white---default)
+      background var(--blue-light)
+      color var(--white-default)
       &:hover
-        background var(--primary---dark)
+        background var(--blue-default)
       &:active
-        background var(--primary---darker)
+        background var(--blue-dark)
     &__secondary
-      border 1px solid var(--gray---default)
-      background var(--white---default)
-      color var(--gray---default)
+      border 1px solid var(--black-lighter)
+      background var(--white-default)
+      color var(--black-default)
       &:hover
-        background var(--gray---light)
+        background var(--white-dark)
       &:active
-        background var(--gray---dark)
+        background var(--white-darker)
     &__danger
-      background var(--error---default)
-      color var(--white---default)
+      background var(--red-light)
+      color var(--white-default)
       &:hover
-        background var(--error---dark)
+        background var(--red-default)
       &:active
-        background var(--error---darker)
+        background var(--red-dark)
 </style>

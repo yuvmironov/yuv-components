@@ -5,28 +5,49 @@
 Цвета используемые в пакете
 ```css
 :root {
-    --gray---darker: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #C2C9D1;
-    --gray---dark: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), #C2C9D1;
-    --gray---default: rgba(194, 201, 209, 1);
-    --gray---light: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #C2C9D1;
-    --gray---lighter: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #C2C9D1;
-    --black---default: rgba(0, 0, 0, 1);
-    --black---light: rgba(0, 0, 0, 0.5);
-    --black---lighter: rgba(0, 0, 0, 0.25);
-    --white---default: rgba(255, 255, 255, 1);
-    --white---light: rgba(255, 255, 255, 0.7);
-    --white---lighter: rgba(255, 255, 255, 0.5);
-    --primary---darker: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #3E66FB;
-    --primary---dark: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), #3E66FB;
-    --primary---default: rgba(62, 102, 251, 1);
-    --primary---light: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), #3E66FB;
-    --primary---lighter: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #3E66FB;
-    --error---darker: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #F03738;
-    --error---dark: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), #F03738;
-    --error---default: rgba(240, 55, 56, 1);
-    --error---light: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), #F03738;
-    --error---lighter: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #F03738;
+    --black-dark: rgba(51, 51, 51, 1);
+    --black-default: rgba(79, 79, 79, 1);
+    --black-light: rgba(130, 130, 130, 1);
+    --black-lighter: rgba(189, 189, 189, 1);
+    --red-dark: rgba(255, 0, 0, 1);
+    --red-default: rgba(235, 87, 87, 1);
+    --red-light: rgba(225, 128, 128, 1);
+    --orange: rgba(242, 153, 74, 1);
+    --yellow: rgba(242, 201, 76, 1);
+    --green-dark: rgba(33, 150, 83, 1);
+    --green-default: rgba(39, 174, 96, 1);
+    --green-light: rgba(111, 207, 151, 1);
+    --blue-dark: rgba(47, 128, 237, 1);
+    --blue-default: rgba(45, 156, 219, 1);
+    --blue-light: rgba(86, 204, 242, 1);
+    --white-default: rgba(255, 255, 255, 1);
+    --white-dark: rgba(248, 248, 248, 1);
+    --white-darker: rgba(238, 238, 238, 1);
 }
+```
+
+###icons
+Список иконок в файле шрифтовых иконок
+
+```text
+.icon-alert
+.icon-arrow-down
+.icon-arrow-left
+.icon-arrow-right
+.icon-arrow-up
+.icon-check
+.icon-edit
+.icon-list
+.icon-log-in
+.icon-log-out
+.icon-minus
+.icon-plus
+.icon-repeat
+.icon-save
+.icon-trash
+.icon-user-check
+.icon-user-plus
+.icon-x
 ```
 
 ###yuv-button
