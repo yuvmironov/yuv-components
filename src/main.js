@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Components from '@/components'
+import './Styles/ResetStyle.styl'
+import './Styles/Variable.styl'
+import './Styles/yuv-font.styl'
 
 const app = createApp(App)
 

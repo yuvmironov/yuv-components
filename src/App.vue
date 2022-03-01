@@ -3,6 +3,13 @@
     <div class="Components-Block">
       <yuv-input id="asd" type="text" label="adasd" v-model="test"/>
     </div>
+    <div class="Components-Block">
+      <yuv-button/>
+    </div>
+    <div class="Components-Block">
+      <span class="icon icon-mail-add">
+      </span>
+    </div>
   </div>
   <router-view/>
 </template>
@@ -22,9 +29,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@import "Styles/ResetStyle.styl"
-@import "Styles/Variable.styl"
-
 #Home
   padding 20px
 .Components
