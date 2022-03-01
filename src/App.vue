@@ -4,7 +4,9 @@
       <yuv-input id="asd" type="text" label="adasd" v-model="test"/>
     </div>
     <div class="Components-Block">
-      <yuv-button/>
+      <yuv-button
+        :fun="testClick"
+      />
     </div>
     <div class="Components-Block">
       <span class="icon icon-alert">
@@ -20,9 +22,13 @@ import { ref } from 'vue'
 export default {
   setup () {
     const test = ref('')
+    const testClick = () => {
+      console.log('test click')
+    }
 
     return {
-      test
+      test,
+      testClick
     }
   }
 }
@@ -32,7 +38,8 @@ export default {
 #Home
   padding 20px
 .Components
-  &-Blocks
+  &-Block
     display flex
     justify-content space-between
+    margin-bottom 20px
 </style>

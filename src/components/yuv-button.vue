@@ -1,5 +1,5 @@
 <template>
-  <button class="yuvButton" :class="`yuvButton__Size__${size} yuvButton__Sheme__${type}`">
+  <button @click="fun" class="yuvButton" :class="`yuvButton__Size__${size} yuvButton__Sheme__${type}`">
     <span v-if="leftIcon" class="icon yuvButton-IconLeft" :class="'icon-' + leftIcon"/>
     {{ name }}
     <span v-if="rightIcon" class="icon yuvButton-IconRight" :class="'icon-' + rightIcon"/>
@@ -26,7 +26,11 @@ export default {
     },
     type: {
       type: String,
-      default: 'danger'
+      default: 'base'
+    },
+    fun: {
+      type: Function,
+      require: true
     }
   }
 }
