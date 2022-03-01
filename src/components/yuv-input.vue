@@ -1,9 +1,11 @@
 <template>
   <div class="YuvInput">
+    <span v-if="icon" class="icon YuvInput-Icon" :class="`icon-${icon}`"/>
     <input class="YuvInput-Input"
            :class="{ 'YuvInput-Input__Error' : !flag, 'YuvInput-Input__Success': flag }"
            :type="type"
            :id="id"
+           :style="styl"
            :value="modelValue"
            :disabled="disabled"
            @input="inputEvent($event.target.value)"
@@ -17,7 +19,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 export default {
   name: 'yuv-input',
   emits: ['update:modelValue'],
@@ -39,13 +41,23 @@ export default {
       type: Boolean,
       default: false
     },
-    icon: {},
+    icon: {
+      type: String,
+      default: ''
+    },
     errMessage: {}
   },
   setup (props, { emit }) {
     const flag = ref(false)
     onMounted(() => {
       inputEvent(props.modelValue)
+    })
+    const styl = computed(() => {
+      if (props.icon) {
+        return 'padding: 0 2em'
+      } else {
+        return 'padding: 0 1em'
+      }
     })
     const inputEvent = (data) => {
       const digits = /\d/g
@@ -75,7 +87,8 @@ export default {
     }
     return {
       inputEvent,
-      flag
+      flag,
+      styl
     }
   }
 }
@@ -85,6 +98,11 @@ export default {
 .YuvInput
   position:relative
   width: 100%
+  &-Icon
+    position absolute
+    top 10px
+    left 4px
+    z-index 10
   &-Label
     position:absolute
     font-size: var(--base--label)
@@ -106,7 +124,6 @@ export default {
     outline:none
     border: 0
     border-radius 3px
-    padding: 0 1em
     box-shadow: inset 0 0 0 1px var(--black-light)
     box-sizing: border-box
     &__Error

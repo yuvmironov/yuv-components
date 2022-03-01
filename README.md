@@ -1,5 +1,23 @@
 # yuv-components
-Пакет компонентов
+<b>Разработка производится для vue 3 и не гарантируется работа на более старой версии</b>
+
+Пакет компонентов (проект находится в активной разработке 
+и будет дополняться компонентами по мере возможности)
+
+### Подключение 
+в файле main.js
+```js
+import 'yuv-components/src/Styles/Variable.styl'
+import 'yuv-components/src/Styles/ResetStyle.styl'
+import 'yuv-components/src/Styles/yuv-font.styl'
+import Components from 'yuv-components/src/components'
+
+const app = createApp(App)
+
+for (const key in Components) {
+  app.component(key, Components[key])
+}
+```
 
 ### color
 Цвета используемые в пакете
@@ -27,28 +45,28 @@
 ```
 
 ### icons
-Список иконок в файле шрифтовых иконок
-
-```text
-.icon-alert
-.icon-arrow-down
-.icon-arrow-left
-.icon-arrow-right
-.icon-arrow-up
-.icon-check
-.icon-edit
-.icon-list
-.icon-log-in
-.icon-log-out
-.icon-minus
-.icon-plus
-.icon-repeat
-.icon-save
-.icon-trash
-.icon-user-check
-.icon-user-plus
-.icon-x
+Список иконок в файле шрифтовых иконок и использование в коде
+```vue
+<span class="icon icon-user-check"/>
 ```
+ - .icon-alert
+ - .icon-arrow-down
+ - .icon-arrow-left
+ - .icon-arrow-right
+ - .icon-arrow-up
+ - .icon-check
+ - .icon-edit
+ - .icon-list
+ - .icon-log-in
+ - .icon-log-out
+ - .icon-minus
+ - .icon-plus
+ - .icon-repeat
+ - .icon-save
+ - .icon-trash
+ - .icon-user-check
+ - .icon-user-plus
+ - .icon-x
 
 ### yuv-button
 Компонент кнопка
@@ -74,3 +92,31 @@
 ```
 
 ### yuv-input
+Компонент input (со встроенной валидацией вводимых данных)
+
+Валидация типа password производится по следующим параметрам:
+ - должны присутствовать цифры
+ - должны присутствовать большие буквы
+ - должны присутствовать маленькие буквы
+ - длинна пароля не менее 8 и не более 64 символов
+ - все на английском языке
+
+На данный момент времени реализована поддержка типов (text, password, email)
+
+Параметры:
+ - <b>type {String}</b> - Тип поля для ввода (по умолчанию text)
+ - <b>id {String}</b> - id поля для ввода (обязательно)
+ - <b>label {String}</b> - Label вводимого поля
+ - <b>disabled {Boolean}</b> - идентификатор активного поля ввода (true / false)
+ - <b>icon {String}</b> - Иконка для поля ввода
+ - <b>errMessage {String}</b> - Сообщение об ошибочном вводе (не реализовано)
+
+Использование в коде:
+```vue
+<yuv-input 
+    id="id"
+    type="text" 
+    label="Label" 
+    v-model="test"
+/>
+```

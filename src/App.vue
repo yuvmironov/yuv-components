@@ -24,6 +24,7 @@ export default {
     const test = ref('')
     const testClick = () => {
       console.log('test click')
+      test.value = ''
     }
 
     return {
