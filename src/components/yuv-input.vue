@@ -87,30 +87,30 @@ export default {
   width: 100%
   &-Label
     position:absolute
-    font-size: var(--fontlabel)
-    color:var(--grayBlack)
+    font-size: var(--base--label)
+    color:var(--black---default)
     z-index:2
     left:.5em
     top:.8em
     pointer-events:none
-    background:var(--inputBack_P)
+    background:var(--white---default)
     transition:all 200ms ease-out
     transform:translateY(-1.45em)
     padding: 0 .5em
   &-Input
     position:relative
-    font-size: var(--fontBase)
+    font-size: var(--base--size)
     width: 100%;
     height: 2.5em;
-    color:var(--brandBlack)
+    color:var(--black---default)
     outline:none
     border: 0
     border-radius 3px
     padding: 0 1em
-    box-shadow: inset 0 0 0 1px var(--grayMiddle)
+    box-shadow: inset 0 0 0 1px var(--black---light)
     box-sizing: border-box
     &__Error
-      box-shadow 0 0 0 1px var(--alert)
+      box-shadow 0 0 0 1px var(--error---lighter)
     &__Success
-      box-shadow 0 0 0 1px var(--success)
+      box-shadow 0 0 0 1px var(--primary---lighter)
 </style>
