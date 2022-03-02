@@ -9,27 +9,60 @@
       />
     </div>
     <div class="Components-Block">
-      <span class="icon icon-alert">
-      </span>
+      <yuv-button
+        left-icon="check"
+        name="Удачная нотификация"
+        :fun="successNoty"
+      />
+      <yuv-button
+        name="Не удачная нотификация"
+        type="danger"
+        :fun="errNoty"
+      />
     </div>
   </div>
+  <yuv-notification/>
   <router-view/>
 </template>
 
 <script>
 import { ref } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   setup () {
+    const store = useStore()
+
     const test = ref('')
     const testClick = () => {
       console.log('test click')
       test.value = ''
     }
+    const successNoty = () => {
+      store.commit('SetNotification', {
+        header: 'Успех',
+        body: 'Описание успешной нотификации',
+        flag: true,
+        status: 'success',
+        duration: 5000
+      })
+    }
+
+    const errNoty = () => {
+      store.commit('SetNotification', {
+        header: 'Ошибка',
+        body: 'Описание ошибки или сообщение о неудаче действия',
+        flag: true,
+        status: 'error',
+        duration: 5000
+      })
+    }
 
     return {
       test,
-      testClick
+      testClick,
+      successNoty,
+      errNoty
     }
   }
 }
@@ -42,5 +75,6 @@ export default {
   &-Block
     display flex
     justify-content space-between
-    margin-bottom 20px
+    padding 10px 0
+    border-bottom 1px solid var(--black-dark)
 </style>

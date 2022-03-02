@@ -26,7 +26,7 @@ export default {
     },
     type: {
       type: String,
-      default: 'danger'
+      default: 'base'
     },
     fun: {
       type: Function,
@@ -38,6 +38,7 @@ export default {
 
 <style lang="stylus" scoped>
 .yuvButton
+  font-family Manrope, sans-serif
   border-radius 8px
   display flex
   align-items center

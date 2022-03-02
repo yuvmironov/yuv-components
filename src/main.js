@@ -5,7 +5,7 @@ import store from './store'
 import Components from '@/components'
 import './Styles/ResetStyle.styl'
 import './Styles/Variable.styl'
-import './Styles/yuv-font.styl'
+import './Styles/Fonts.styl'
 
 const app = createApp(App)
 
