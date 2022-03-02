@@ -120,3 +120,41 @@ for (const key in Components) {
     v-model="test"
 />
 ```
+
+
+### yuv-notification
+Компонент для вывода информационных сообщений
+
+Использует store (vuex). Можно закрыть кликом по сообщению. 
+
+Дополнительное подключение:
+```js
+// В файле store (index.js)
+import Notification from 'yuv-components/src/store/Notification'
+
+modules: {
+  Notification
+}
+```
+В файле App.vue
+```vue
+<yuv-notification/>
+```
+
+Вызов сообщения производиться следующим образом:
+```js
+store.commit('SetNotification', {
+  header: 'Ошибка ввода данных',
+  body: 'Не все поля ввода заполнены корректно',
+  flag: true,
+  status: 'error',
+  duration: 5000
+})
+```
+
+Параметры:
+ - <b>header</b> - Заголовок сообщения
+ - <b>body</b> - Тело сообщения
+ - <b>flag</b> - флаг на открытие (true - открыть, false - закрыть)
+ - <b>status</b> - ошибка или успех (error или success)
+ - <b>duration</b> - задержка перед закрытием (0 - не закрывать автоматически)
