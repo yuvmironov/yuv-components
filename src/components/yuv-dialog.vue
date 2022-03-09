@@ -1,11 +1,11 @@
 <template>
-  <div class="YuvDialog" v-if="openingFlag" @click="onClose">
+  <div class="YuvDialog" v-if="openingFlag">
     <div class="YuvDialog-Content">
       <div class="YuvDialog-Header">
         {{ header }}
       </div>
       <div class="YuvDialog-Body">
-        <slot name="body"/>
+        {{ body }}
       </div>
       <div class="YuvDialog-Footer">
         <slot name="actions"/>
@@ -23,6 +23,10 @@ export default {
     header: {
       type: String,
       default: 'Заголовок'
+    },
+    body: {
+      type: String,
+      default: 'Тело сообщения'
     }
   },
   setup () {
@@ -50,7 +54,7 @@ export default {
   bottom 0
   left 0
   right 0
-  background-color var(--black-light)
+  background-color var(--blak-transparent)
   z-index 9999
   display flex
   justify-content center
@@ -58,8 +62,10 @@ export default {
   &-Content
     border-radius 5px
     background-color var(--white-darker)
-    min-width 300px
+    min-width 200px
+    max-width 300px
   &-Header
+    text-align center
     padding 15px
     border-bottom 1px solid var(--black-light)
   &-Body

@@ -28,10 +28,10 @@
     </div>
   </div>
   <yuv-notification/>
-  <yuv-dialog ref="dialog">
-    <template v-slot:body>
-      Тело сообщения
-    </template>
+  <yuv-dialog ref="dialog"
+    header="Заголовок диалогового окна"
+    body="Сообщение для реагирования пользователем"
+  >
     <template v-slot:actions>
       <yuv-button
         name="Согласие"
