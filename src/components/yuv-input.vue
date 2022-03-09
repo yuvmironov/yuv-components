@@ -80,6 +80,8 @@ export default {
             data.match(capitalLetter) &&
             data.match(smallLetter))
           break
+        default:
+          flag.value = true
       }
       if (flag.value) {
         emit('update:modelValue', data)
