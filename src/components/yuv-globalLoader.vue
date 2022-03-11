@@ -9,7 +9,7 @@ import { ref } from 'vue'
 import { useStore } from 'vuex'
 
 export default {
-  name: 'yuv-global-component',
+  name: 'yuv-global-loader',
   setup () {
     const store = useStore()
 
