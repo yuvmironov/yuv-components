@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { computed } from 'vue'
 import { useStore } from 'vuex'
 
 export default {
@@ -13,7 +13,7 @@ export default {
   setup () {
     const store = useStore()
 
-    const flag = ref(store.getters.GetGloaderFlag)
+    const flag = computed(() => store.getters.GetGloaderFlag)
     return {
       flag
     }

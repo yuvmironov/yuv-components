@@ -1,6 +1,6 @@
 {
   "name": "yuv-components",
-  "version": "0.0.12-b",
+  "version": "0.0.13",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
