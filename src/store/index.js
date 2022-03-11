@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import Notification from './Notification'
+import GlobalLoader from '@/store/GlobalLoader'
 
 export default createStore({
   state: {
@@ -9,6 +10,7 @@ export default createStore({
   actions: {
   },
   modules: {
-    Notification
+    Notification,
+    GlobalLoader
   }
 })

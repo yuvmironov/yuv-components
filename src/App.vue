@@ -43,6 +43,7 @@
       />
     </template>
   </yuv-dialog>
+  <yuv-global-loader/>
   <router-view/>
 </template>
 

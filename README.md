@@ -26,6 +26,7 @@ for (const key in Components) {
     --black-dark: rgba(51, 51, 51, 1);
     --black-default: rgba(79, 79, 79, 1);
     --black-light: rgba(130, 130, 130, 1);
+    --blak-transparent: rgba(0, 0, 0, 0.4);
     --black-lighter: rgba(189, 189, 189, 1);
     --red-dark: rgba(255, 0, 0, 1);
     --red-default: rgba(235, 87, 87, 1);
@@ -121,7 +122,6 @@ for (const key in Components) {
 />
 ```
 
-
 ### yuv-notification
 Компонент для вывода информационных сообщений
 
@@ -158,3 +158,22 @@ store.commit('SetNotification', {
  - <b>flag</b> - флаг на открытие (true - открыть, false - закрыть)
  - <b>status</b> - ошибка или успех (error или success)
  - <b>duration</b> - задержка перед закрытием (0 - не закрывать автоматически)
+
+
+### yuv-global-loader
+Компонент loader закрывающий доступ ко всему контенту
+
+Дополнительное подключение 
+```js
+// в файле store (index.js)
+import GlobalLoader from 'yuv-components/src/store/GlobalLoader'
+
+modules: {
+  GlobalLoader
+}
+```
+В файле App.vue
+```vue
+<yuv-global-loader/>
+```
+Для показа и скрытия использовать мутацию SetGloaderFlag со значением true или false
