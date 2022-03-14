@@ -1,0 +1,135 @@
+<template>
+  <div class="YuvInput">
+    <span v-if="icon" class="icon YuvInput-Icon" :class="`icon-${icon}`"/>
+    <input class="YuvInput-Input"
+           :class="{ 'YuvInput-Input__Error' : !flag, 'YuvInput-Input__Success': flag }"
+           :type="type"
+           :id="id"
+           :style="styl"
+           :value="modelValue"
+           :disabled="disabled"
+           @input="inputEvent($event.target.value)"
+           @focus="inputEvent($event.target.value)"
+           @blur="inputEvent($event.target.value)"
+           autocomplete="off"
+           required
+    >
+    <label class="YuvInput-Label" :for="id">{{ label }}</label>
+  </div>
+</template>
+
+<script>
+import { ref, onMounted, computed } from 'vue'
+export default {
+  name: 'yuv-input',
+  emits: ['update:modelValue'],
+  props: {
+    type: {
+      type: String,
+      default: 'text'
+    },
+    id: {
+      type: String,
+      required: true
+    },
+    label: {
+      type: String,
+      default: 'Default label'
+    },
+    modelValue: {},
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
+      type: String,
+      default: ''
+    },
+    errMessage: {}
+  },
+  setup (props, { emit }) {
+    const flag = ref(false)
+    onMounted(() => {
+      inputEvent(props.modelValue)
+    })
+    const styl = computed(() => {
+      if (props.icon) {
+        return 'padding: 0 2em'
+      } else {
+        return 'padding: 0 1em'
+      }
+    })
+    const inputEvent = (data) => {
+      const digits = /\d/g
+      const capitalLetter = /[A-Z]/g
+      const smallLetter = /[a-z]/g
+      // eslint-disable-next-line
+      const regEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+      switch (props.type) {
+        case 'text':
+          if (data) {
+            flag.value = true
+          }
+          break
+        case 'email':
+          flag.value = regEmail.test(data)
+          break
+        case 'password':
+          flag.value = !!((data.length >= 8 && data.length <= 64) &&
+            data.match(digits) &&
+            data.match(capitalLetter) &&
+            data.match(smallLetter))
+          break
+        default:
+          flag.value = true
+      }
+      if (flag.value) {
+        emit('update:modelValue', data)
+      }
+    }
+    return {
+      inputEvent,
+      flag,
+      styl
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+.YuvInput
+  position:relative
+  width: 100%
+  &-Icon
+    position absolute
+    top 10px
+    left 4px
+    z-index 10
+  &-Label
+    position:absolute
+    font-size: var(--base--label)
+    color:var(--black-default)
+    z-index:2
+    left:.5em
+    top:.8em
+    pointer-events:none
+    background:var(--white-default)
+    transition:all 200ms ease-out
+    transform:translateY(-1.45em)
+    padding: 0 .5em
+  &-Input
+    position:relative
+    font-size: var(--base--size)
+    width: 100%;
+    height: 2.5em;
+    color:var(--black-default)
+    outline:none
+    border: 0
+    border-radius 3px
+    box-shadow: inset 0 0 0 1px var(--black-light)
+    box-sizing: border-box
+    &__Error
+      box-shadow 0 0 0 1px var(--red-light)
+    &__Success
+      box-shadow 0 0 0 1px var(--blue-light)
+</style>
