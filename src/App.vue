@@ -26,6 +26,29 @@
         :fun="openDialog"
       />
     </div>
+    <div class="Components-Block">
+      <yuv-select
+        id="select"
+        label="Выберете цвет"
+        v-model="selectValue"
+        :options="
+          [
+            {
+              id: '#ff8080',
+              name: 'Красный'
+            },
+            {
+              id: '#f2c94c',
+              name: 'Оранжевый'
+            },
+            {
+              id: '#27ae60',
+              name: 'Зеленый'
+            }
+          ]
+         "
+      />
+    </div>
   </div>
   <yuv-notification/>
   <yuv-dialog ref="dialog"
@@ -91,6 +114,8 @@ export default {
       dialog.value.onClose()
     }
 
+    const selectValue = ref('')
+
     return {
       dialog,
       test,
@@ -99,7 +124,8 @@ export default {
       errNoty,
       openDialog,
       acceptDialog,
-      canceledDialog
+      canceledDialog,
+      selectValue
     }
   }
 }
