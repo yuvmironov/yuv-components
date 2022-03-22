@@ -158,8 +158,7 @@ store.commit('SetNotification', {
  - <b>flag</b> - флаг на открытие (true - открыть, false - закрыть)
  - <b>status</b> - ошибка или успех (error или success)
  - <b>duration</b> - задержка перед закрытием (0 - не закрывать автоматически)
-
-
+ 
 ### yuv-global-loader
 Компонент loader закрывающий доступ ко всему контенту
 
@@ -177,3 +176,24 @@ modules: {
 <yuv-global-loader/>
 ```
 Для показа и скрытия использовать мутацию SetGloaderFlag со значением true или false
+
+
+### yuv-textarea
+Компонент textarea
+
+Параметры:
+- <b>id {String}</b> - id поля для ввода (обязательно)
+- <b>label {String}</b> - Label вводимого поля
+- <b>disabled {Boolean}</b> - идентификатор активного поля ввода (true / false)
+- <b>icon {String}</b> - Иконка для поля ввода (Не реализовано)
+- <b>errMessage {String}</b> - Сообщение об ошибочном вводе (не реализовано)
+
+Использование в коде:
+```vue
+<yuv-input 
+    id="id"
+    type="text" 
+    label="Label" 
+    v-model="test"
+/>
+```

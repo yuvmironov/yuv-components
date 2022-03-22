@@ -4,6 +4,7 @@ import yuvNotification from '../components/yuv-notification'
 import yuvDialog from '../components/yuv-dialog'
 import yuvGlobalLoader from '../components/yuv-globalLoader'
 import yuvSelect from '../components/yuv-select'
+import yuvTextarea from './yuv-textarea'
 
 export default {
   yuvButton,
@@ -11,5 +12,6 @@ export default {
   yuvNotification,
   yuvDialog,
   yuvGlobalLoader,
-  yuvSelect
+  yuvSelect,
+  yuvTextarea
 }

@@ -49,6 +49,9 @@
          "
       />
     </div>
+    <div class="Components-Block">
+      <yuv-textarea id="asd" label="adasd" v-model="testTextArea"/>
+    </div>
   </div>
   <yuv-notification/>
   <yuv-dialog ref="dialog"
@@ -80,6 +83,7 @@ export default {
 
     const dialog = ref(null)
     const test = ref('')
+    const testTextArea = ref('')
     const testClick = () => {
       console.log('test click')
       test.value = ''
@@ -119,6 +123,7 @@ export default {
     return {
       dialog,
       test,
+      testTextArea,
       testClick,
       successNoty,
       errNoty,
