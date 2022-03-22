@@ -2,7 +2,6 @@
   <div class="YuvTextArea">
 <!--    <span v-if="icon" class="icon YuvTextArea-Icon" :class="`icon-${icon}`"/>-->
     <textarea class="YuvTextArea-TextArea"
-           :class="{ 'YuvInput-Input__Error' : !flag, 'YuvInput-Input__Success': flag }"
            :id="id"
            :value="modelValue"
            :disabled="disabled"
