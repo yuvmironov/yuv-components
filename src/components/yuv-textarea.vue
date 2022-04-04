@@ -76,7 +76,7 @@ export default {
     padding 4px
     position relative
     font-size var(--base--size)
-    width 300px
+    width 100%
     height 160px
     color var(--black-default)
     outline none
