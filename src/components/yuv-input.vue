@@ -85,6 +85,8 @@ export default {
       }
       if (flag.value) {
         emit('update:modelValue', data)
+      } else {
+        emit('update:modelValue', '')
       }
     }
     return {
