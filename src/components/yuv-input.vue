@@ -60,6 +60,7 @@ export default {
       }
     })
     const inputEvent = (data) => {
+      console.log(data)
       const digits = /\d/g
       const capitalLetter = /[A-Z]/g
       const smallLetter = /[a-z]/g
@@ -83,11 +84,7 @@ export default {
         default:
           flag.value = true
       }
-      if (flag.value) {
-        emit('update:modelValue', data)
-      } else {
-        emit('update:modelValue', '')
-      }
+      emit('update:modelValue', data)
     }
     return {
       inputEvent,

@@ -1,7 +1,8 @@
 <template>
   <div id="Home" class="Components">
     <div class="Components-Block">
-      <yuv-input id="asd" type="text" label="adasd" v-model="test"/>
+      {{ test }}
+      <yuv-input id="asd" type="email" label="E mail" v-model="test"/>
     </div>
     <div class="Components-Block">
       <yuv-button
