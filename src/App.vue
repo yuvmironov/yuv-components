@@ -4,8 +4,29 @@
       {{ test }}
       <yuv-input id="asd" type="email" label="E mail" v-model="test"/>
     </div>
-    <div class="Components-Block">
+    <div class="Components-Block" style="justify-content: flex-start">
       <yuv-button
+        class="Components-Button"
+        :fun="testClick"
+      />
+      <yuv-button
+        class="Components-Button"
+        type="outline"
+        :fun="testClick"
+      />
+      <yuv-button
+        class="Components-Button"
+        type="text"
+        :fun="testClick"
+      />
+      <yuv-button
+        class="Components-Button"
+        type="elevanted"
+        :fun="testClick"
+      />
+      <yuv-button
+        class="Components-Button"
+        type="tonal"
         :fun="testClick"
       />
     </div>
@@ -141,6 +162,8 @@ export default {
 #Home
   padding 20px
 .Components
+  &-Button
+    margin-right 10px
   &-Block
     display flex
     justify-content space-between

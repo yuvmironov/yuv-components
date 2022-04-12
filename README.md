@@ -23,25 +23,100 @@ for (const key in Components) {
 Цвета используемые в пакете
 ```css
 :root {
-    --black-dark: rgba(51, 51, 51, 1);
-    --black-default: rgba(79, 79, 79, 1);
-    --black-light: rgba(130, 130, 130, 1);
+    /* Color styles */
+    --black-dark: #333333;
+    --black-default: #4F4F4F;
+    --black-light: #828282;
+    --black-lighter: #BDBDBD;
+    --red-dark: #FF0000;
+    --red-default: #EB5757;
+    --red-light: #E18080;
+    --orange: #F2994A;
+    --yellow: #F2C94C;
+    --green-dark: #219653;
+    --green-default: #27AE60;
+    --green-light: #6FCF97;
+    --blue-dark: #2F80ED;
+    --blue-default: #2D9CDB;
+    --blue-light: #56CCF2;
+    --white-default: #FFFFFF;
+    --white-dark: #F8F8F8;
+    --white-darker: #EEEEEE;
     --blak-transparent: rgba(0, 0, 0, 0.4);
-    --black-lighter: rgba(189, 189, 189, 1);
-    --red-dark: rgba(255, 0, 0, 1);
-    --red-default: rgba(235, 87, 87, 1);
-    --red-light: rgba(225, 128, 128, 1);
-    --orange: rgba(242, 153, 74, 1);
-    --yellow: rgba(242, 201, 76, 1);
-    --green-dark: rgba(33, 150, 83, 1);
-    --green-default: rgba(39, 174, 96, 1);
-    --green-light: rgba(111, 207, 151, 1);
-    --blue-dark: rgba(47, 128, 237, 1);
-    --blue-default: rgba(45, 156, 219, 1);
-    --blue-light: rgba(86, 204, 242, 1);
-    --white-default: rgba(255, 255, 255, 1);
-    --white-dark: rgba(248, 248, 248, 1);
-    --white-darker: rgba(238, 238, 238, 1);
+    --body-large: 16px;
+    --body-medium: 14px;
+    --bod-small: 12px;
+
+    --label-large: 14px;
+    --label-medium: 12px;
+    --label-small: 11px;
+
+    --title-large: 22px;
+    --title-medium: 16px;
+    --title-small: 14px;
+
+    --headline-large: 32px;
+    --headline-medium: 28px;
+    --headline-small: 24px;
+
+    --display-large: 57px;
+    --display-medium: 45px;
+    --display-small: 36px;
+    }
+
+/* Font size */
+body[data-theme='brand'] {
+    --primary_opaciti_08: rgba(103, 80, 164, 0.8);
+    --primary_opaciti_008: rgba(103, 80, 164, 0.08); 
+    --primary_opaciti_005: rgba(103, 80, 164, 0.05);
+    --primary_opaciti_012: rgba(103, 80, 164, 0.12);    
+    --on-primary: #FFFFFF;
+    --promary-container: #EADDFF;
+    --on-primary-container: #21005D;
+    --secondary: #625B71;
+    --on-secondary: #FFFFFF;
+    --secondary-container: #E8DEF8;
+    --on-secondary-container: #1D192B;
+    --tertiary: #7D5260;
+    --on-tertiary: #FFFFFF;
+    --tertiary-container: #FFD8E4;
+    --on-tertiary-container: #31111D;
+    --error: #B3261E;
+    --on-error: #FFFFFF;
+    --error-container: #F9DEDC;
+    --on-error-container: #410E0B;
+    --background: #FFFBFE;
+    --on-backgroud: #1C1B1F;
+    --surface: #FFFBFE;
+    --on-surface: #1C1B1F;
+    --surface-variant: #FFFBFE;
+    --on-surface-variant: #49454F;
+    --outline: #79747E;
+}
+body[data-theme='dark'] {
+    --primary: #D0BCFF;
+    --on-primary: #381E72;
+    --promary-container: #4F378B;
+    --on-primary-container: #EADDFF;
+    --secondary: #CCC2DC;
+    --on-secondary: #332D41;
+    --secondary-container: #4A4458;
+    --on-secondary-container: #E8DEF8;
+    --tertiary: #EFB8C8;
+    --on-tertiary: #492532;
+    --tertiary-container: #633B48;
+    --on-tertiary-container: #FFD8E4;
+    --error: #F2B8B5;
+    --on-error: #601410;
+    --error-container: #8C1D18;
+    --on-error-container: #F9DEDC;
+    --background: #1C1B1F;
+    --on-backgroud: #E6E1E5;
+    --surface: #1C1B1F;
+    --on-surface: #E6E1E5;
+    --surface-variant: #49454F;
+    --on-surface-variant: #CAC4D0;
+    --outline: #938F99;
 }
 ```
 
@@ -74,7 +149,7 @@ for (const key in Components) {
 
 Параметры
  - <b>size {String}</b> - размер (S, M)
- - <b>name {String}</b> - имя кнопки
+ - <b>label {String}</b> - имя кнопки
  - <b>leftIcon {String}</b> - левая иконка (класс иконки из пакета шрифтовых иконок)
  - <b>rightIcon {String}</b> - правая иконка (класс иконки из пакета шрифтовых иконок)
  - <b>type {String}</b> - цветовая схема
@@ -84,7 +159,7 @@ for (const key in Components) {
 ```vue
 <yuv-button
     size="M"
-    name="Кнопка"
+    label="Кнопка"
     leftIcon="icon-arrow-left"
     rightIcon="icon-arrow-right"
     type="base"

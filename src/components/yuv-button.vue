@@ -1,7 +1,7 @@
 <template>
-  <button @click="fun" class="yuvButton" :class="`yuvButton__Size__${size} yuvButton__Sheme__${type}`">
+  <button @click="fun" class="yuvButton" :class="`yuvButton__Type__${type}`">
     <span v-if="leftIcon" class="icon yuvButton-IconLeft" :class="'icon-' + leftIcon"/>
-    {{ name }}
+    <span :class="`yuvButton__Size__${size}`">{{ label }}</span>
     <span v-if="rightIcon" class="icon yuvButton-IconRight" :class="'icon-' + rightIcon"/>
   </button>
 </template>
@@ -14,7 +14,7 @@ export default {
       type: String,
       default: 'M'
     },
-    name: {
+    label: {
       type: String,
       default: 'Кнопка'
     },
@@ -26,7 +26,7 @@ export default {
     },
     type: {
       type: String,
-      default: 'base'
+      default: 'field'
     },
     fun: {
       type: Function,
@@ -39,7 +39,8 @@ export default {
 <style lang="stylus" scoped>
 .yuvButton
   font-family Manrope, sans-serif
-  border-radius 8px
+  padding 10px 24px
+  border-radius: 100px
   display flex
   align-items center
   &-IconLeft
@@ -47,33 +48,74 @@ export default {
   &-IconRight
     margin-left 8px
   &__Size
+    &__L
+      font-size var(--label-large)
     &__S
-      font-size var(--fontSize--S)
-      padding 8px 16px
+      font-size var(--label-small)
     &__M
-      font-size var(--fontSize--M)
-      padding 10px 16px
-  &__Sheme
-    &__base
-      background var(--blue-light)
-      color var(--white-default)
+      font-size var(--label-medium)
+  &__Type
+    &__field
+      background var(--primary)
+      color var(--on-primary)
+      font-weight 500
+      transition 0.3s
       &:hover
-        background var(--blue-default)
+        box-shadow 0 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)
+        opacity 0.9
+        transition 0.3s
       &:active
-        background var(--blue-dark)
-    &__secondary
-      border 1px solid var(--black-lighter)
-      background var(--white-default)
-      color var(--black-default)
+        background var(--primary)
+        box-shadow none
+        transition 0.3s
+    &__outline
+      border 1px solid var(--outline)
+      color var(--primary)
+      font-weight 500
+      transition 0.3s
       &:hover
-        background var(--white-dark)
+        background: var(--primary_opaciti_008)
+        transition 0.3s
       &:active
-        background var(--white-darker)
-    &__danger
-      background var(--red-light)
-      color var(--white-default)
+        background var(--primary_opaciti_012)
+        transition 0.3s
+    &__text
+      color var(--primary)
+      padding 10px 12px
+      font-weight 500
+      transition 0.3s
       &:hover
-        background var(--red-default)
+        background: var(--primary_opaciti_008)
+        transition 0.3s
       &:active
-        background var(--red-dark)
+        background var(--primary_opaciti_012)
+        transition 0.3s
+    &__elevanted
+      background linear-gradient(0deg, var(--primary_opaciti_005), var(--primary_opaciti_005)), var(--surface);
+      box-shadow 0 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)
+      color var(--primary)
+      font-weight 500
+      transition 0.3s
+      &:hover
+        background: linear-gradient(0deg, var(--primary_opaciti_008), var(--primary_opaciti_008)), var(--surface)
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15)
+        opacity 0.9
+        transition 0.3s
+      &:active
+        background linear-gradient(0deg, var(--primary_opaciti_005), var(--primary_opaciti_005)), #FFFBFE
+        box-shadow 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)
+        transition 0.3s
+    &__tonal
+      background var(--secondary-container)
+      color var(--on-secondary-container)
+      font-weight 500
+      transition 0.3s
+      &:hover
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)
+        opacity 0.8
+        transition 0.3s
+      &:active
+        background var(--secondary-container)
+        box-shadow none
+        transition 0.3s
 </style>
