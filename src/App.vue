@@ -1,7 +1,6 @@
 <template>
   <div id="Home" class="Components">
     <div class="Components-Block">
-      {{ test }}
       <yuv-input id="asd" type="email" label="E mail" v-model="test"/>
     </div>
     <div class="Components-Block" style="justify-content: flex-start">
