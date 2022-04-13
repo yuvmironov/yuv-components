@@ -74,6 +74,7 @@ export default {
     transform-origin 0 0
     transition transform .15s ease-in-out
   &-TextArea
+    resize none
     width 100%
     height 160px
     position:relative
