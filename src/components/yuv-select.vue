@@ -1,6 +1,5 @@
 <template>
   <div class="YuvSelect">
-    <label for="id" class="YuvSelect-Label">{{ label }}</label>
     <select
       :id="id"
       class="YuvSelect-Select"
@@ -14,6 +13,7 @@
         {{ option.name }}
       </option>
     </select>
+    <label for="id" class="YuvSelect-Label">{{ label }}</label>
   </div>
 </template>
 
@@ -51,30 +51,30 @@ export default {
   position:relative
   width: 100%
   &-Label
-    position:absolute
-    font-size: var(--base--label)
-    color:var(--black-default)
-    z-index:2
-    left:.5em
-    top:.8em
-    pointer-events:none
-    background:var(--white-default)
-    transition:all 200ms ease-out
-    transform:translateY(-1.45em)
-    padding: 0 .5em
+    position absolute
+    font-size var(--label-medium)
+    color var(--on-backgroud)
+    left 0.4em
+    top 0.6em
+    pointer-events none
+    background var(--background)
+    padding 0 .5em
+    transform-origin 0 0
+    transition transform .15s ease-in-out
   &-Select
     position:relative
-    font-size: var(--base--size)
-    width: 100%;
-    height: 2.5em;
-    color:var(--black-default)
+    padding 0 12px
+    font-size  var(--label-medium)
+    width  100%
+    height  2.5em
+    color var(--on-backgroud)
     outline:none
     border: 0
-    border-radius 3px
-    box-shadow: inset 0 0 0 1px var(--black-light)
-    box-sizing: border-box
-    &__Error
-      box-shadow 0 0 0 1px var(--red-light)
-    &__Success
-      box-shadow 0 0 0 1px var(--blue-light)
+    border-radius 5px
+    box-sizing border-box
+    box-shadow inset 0 0 0 1px var(--tertiary)
+    &:focus, &:not([value=""]):valid
+      & ~ .YuvSelect-Label
+        background-color var(--background)
+        transform scale(.85) translateY(-1.05rem) translateX(.05rem)
 </style>
