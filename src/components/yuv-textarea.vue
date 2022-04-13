@@ -1,15 +1,17 @@
 <template>
   <div class="YuvTextArea">
 <!--    <span v-if="icon" class="icon YuvTextArea-Icon" :class="`icon-${icon}`"/>-->
-    <textarea class="YuvTextArea-TextArea"
-           :id="id"
-           :value="modelValue"
-           :disabled="disabled"
-           @input="inputEvent($event.target.value)"
-           @focus="inputEvent($event.target.value)"
-           @blur="inputEvent($event.target.value)"
-           autocomplete="off"
-           required
+    <textarea
+      class="YuvTextArea-TextArea"
+      :id="id"
+      :value="modelValue"
+      :disabled="disabled"
+      @input="inputEvent($event.target.value)"
+      @focus="inputEvent($event.target.value)"
+      @blur="inputEvent($event.target.value)"
+      autocomplete="off"
+      :placeholder="label"
+      required
     />
     <label class="YuvTextArea-Label" :for="id">{{ label }}</label>
   </div>
@@ -62,31 +64,32 @@ export default {
     z-index 10
   &-Label
     position absolute
-    font-size var(--base--label)
-    color var(--black-default)
-    z-index 2
-    left .5em
-    top .8em
+    font-size var(--label-medium)
+    color var(--on-backgroud)
+    left 0.4em
+    top 0.6em
     pointer-events none
-    background var(--white-default)
-    transition all 200ms ease-out
-    transform translateY(-1.45em)
+    background var(--background)
     padding 0 .5em
+    transform-origin 0 0
+    transition transform .15s ease-in-out
   &-TextArea
-    padding 4px
-    position relative
-    font-size var(--base--size)
     width 100%
     height 160px
-    color var(--black-default)
-    outline none
-    border 0
-    border-radius 3px
-    box-shadow inset 0 0 0 1px var(--black-light)
+    position:relative
+    padding 12px 12px
+    font-size  var(--label-medium)
+    color var(--on-backgroud)
+    outline:none
+    border: 0
+    border-radius 5px
     box-sizing border-box
-    resize none
-    &__Error
-      box-shadow 0 0 0 1px var(--red-light)
-    &__Success
-      box-shadow 0 0 0 1px var(--blue-light)
+    box-shadow inset 0 0 0 1px var(--tertiary)
+    &::placeholder
+      color transparent
+      opacity 0
+    &:focus, &:not(:placeholder-shown)
+      & ~ .YuvTextArea-Label
+        background-color var(--background)
+        transform scale(.85) translateY(-1.05rem) translateX(.05rem)
 </style>
