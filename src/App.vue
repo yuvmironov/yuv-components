@@ -81,11 +81,15 @@
   >
     <template v-slot:actions>
       <yuv-button
-        name="Согласие"
+        class="DialogButton"
+        label="Согласие"
+        type="text"
         :fun="acceptDialog"
       />
       <yuv-button
-        name="Отклонение"
+        class="DialogButton"
+        label="Отклонение"
+        type="text"
         :fun="canceledDialog"
       />
     </template>
@@ -160,6 +164,8 @@ export default {
 <style lang="stylus">
 #Home
   padding 20px
+.DialogButton:not(:last-child)
+  margin-right 8px
 .Components
   &-Button
     margin-right 10px

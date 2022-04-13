@@ -54,24 +54,25 @@ export default {
   bottom 0
   left 0
   right 0
-  background-color var(--blak-transparent)
+  background-color var(--background-transparent)
   z-index 9999
   display flex
   justify-content center
   align-items center
   &-Content
-    border-radius 5px
-    background-color var(--white-darker)
+    border-radius 28px
+    background-color var(--surface)
     min-width 200px
-    max-width 300px
+    max-width 400px
   &-Header
-    text-align center
-    padding 15px
-    border-bottom 1px solid var(--black-light)
+    text-align left
+    font-size var(--headline-small)
+    padding 24px
   &-Body
-    padding 10px 10px 0 10px
+    padding 0 24px
+    font-size var(--body-medium)
   &-Footer
-    padding 10px 0
+    padding 34px 24px
     display flex
-    justify-content space-around
+    justify-content flex-end
 </style>
