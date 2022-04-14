@@ -66,6 +66,7 @@ for (const key in Components) {
 
 /* Font size */
 body[data-theme='brand'] {
+    --primary: #6750A4;
     --primary_opaciti_08: rgba(103, 80, 164, 0.8);
     --primary_opaciti_008: rgba(103, 80, 164, 0.08); 
     --primary_opaciti_005: rgba(103, 80, 164, 0.05);
@@ -95,6 +96,10 @@ body[data-theme='brand'] {
 }
 body[data-theme='dark'] {
     --primary: #D0BCFF;
+    --primary_opaciti_08: rgba(103, 80, 164, 0.8);
+    --primary_opaciti_008: rgba(103, 80, 164, 0.08);
+    --primary_opaciti_005: rgba(103, 80, 164, 0.05);
+    --primary_opaciti_012: rgba(103, 80, 164, 0.12);
     --on-primary: #381E72;
     --promary-container: #4F378B;
     --on-primary-container: #EADDFF;
@@ -148,12 +153,12 @@ body[data-theme='dark'] {
 Компонент кнопка
 
 Параметры
- - <b>size {String}</b> - размер (S, M)
- - <b>label {String}</b> - имя кнопки
- - <b>leftIcon {String}</b> - левая иконка (класс иконки из пакета шрифтовых иконок)
- - <b>rightIcon {String}</b> - правая иконка (класс иконки из пакета шрифтовых иконок)
- - <b>type {String}</b> - цветовая схема
- - <b>fun {Function}</b> - функция выполняемая по нажатию
+ - <b>size {String}</b> - Размер [S, M, L]
+ - <b>label {String}</b> - Имя кнопки
+ - <b>leftIcon {String}</b> - Левая иконка (класс иконки из пакета шрифтовых иконок)
+ - <b>rightIcon {String}</b> - Правая иконка (класс иконки из пакета шрифтовых иконок)
+ - <b>type {String}</b> - Цветовая схема [field, outline, text, elevanted, tonal]
+ - <b>fun {Function}</b> - Функция выполняемая по нажатию
 
 Использование в коде
 ```vue
@@ -185,7 +190,7 @@ body[data-theme='dark'] {
  - <b>label {String}</b> - Label вводимого поля
  - <b>disabled {Boolean}</b> - идентификатор активного поля ввода (true / false)
  - <b>icon {String}</b> - Иконка для поля ввода
- - <b>errMessage {String}</b> - Сообщение об ошибочном вводе (не реализовано)
+ - <b>errMessage {String}</b> - Сообщение об ошибке ввода для пользователя
 
 Использование в коде:
 ```vue

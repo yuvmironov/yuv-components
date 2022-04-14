@@ -16,6 +16,7 @@
       autocomplete="off"
     >
     <label class="YuvInput-Label" :for="id">{{ label }}</label>
+    <span class="YuvInput-Message" v-if="!flag">{{ errMessage }}</span>
   </div>
 </template>
 
@@ -46,7 +47,10 @@ export default {
       type: String,
       default: ''
     },
-    errMessage: {}
+    errMessage: {
+      type: String,
+      default: ''
+    }
   },
   setup (props, { emit }) {
     const flag = ref(false)
@@ -61,7 +65,6 @@ export default {
       }
     })
     const inputEvent = (data) => {
-      console.log(data)
       const digits = /\d/g
       const capitalLetter = /[A-Z]/g
       const smallLetter = /[a-z]/g
@@ -69,8 +72,10 @@ export default {
       const regEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
       switch (props.type) {
         case 'text':
-          if (data) {
+          if (data.length) {
             flag.value = true
+          } else {
+            flag.value = false
           }
           break
         case 'email':
@@ -100,6 +105,15 @@ export default {
 .YuvInput
   position relative
   width 100%
+  margin-bottom 10px
+  &:not(:last-child)
+    margin-right 10px
+  &-Message
+    font-size calc(var(--label-small) * 0.9)
+    position absolute
+    bottom -16px
+    color var(--error)
+    left 10px
   &-Icon
     position absolute
     top 10px

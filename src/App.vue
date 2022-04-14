@@ -1,7 +1,27 @@
 <template>
   <div id="Home" class="Components">
     <div class="Components-Block">
-      <yuv-input id="asd" type="email" label="E mail" v-model="test"/>
+      <yuv-input
+        id="asd"
+        err-message="Данное поле должно быть e-mail"
+        type="email"
+        label="E mail"
+        v-model="testEmail"
+      />
+      <yuv-input
+        id="text"
+        err-message="В поле должен быть хоть один символ"
+        type="text"
+        label="Test text"
+        v-model="testText"
+      />
+      <yuv-input
+        id="password"
+        err-message="Пароль не соответствует требованиям"
+        type="password"
+        label="Test password"
+        v-model="testPassword"
+      />
     </div>
     <div class="Components-Block" style="justify-content: flex-start">
       <yuv-button
@@ -107,11 +127,13 @@ export default {
     const store = useStore()
 
     const dialog = ref(null)
-    const test = ref('')
+    const testEmail = ref('')
+    const testPassword = ref('')
+    const testText = ref('')
     const testTextArea = ref('')
     const testClick = () => {
       console.log('test click')
-      test.value = ''
+      testEmail.value = ''
     }
     const successNoty = () => {
       store.commit('SetNotification', {
@@ -147,7 +169,9 @@ export default {
 
     return {
       dialog,
-      test,
+      testEmail,
+      testText,
+      testPassword,
       testTextArea,
       testClick,
       successNoty,
