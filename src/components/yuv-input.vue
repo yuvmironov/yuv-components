@@ -105,7 +105,7 @@ export default {
 .YuvInput
   position relative
   width 100%
-  margin-bottom 10px
+  margin-bottom 25px
   &:not(:last-child)
     margin-right 10px
   &-Message
