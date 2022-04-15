@@ -172,6 +172,25 @@ body[data-theme='dark'] {
 />
 ```
 
+### yuv-icon-button
+Компонент иконочной кнопки
+
+Параметры
+- <b>size {String}</b> - Размер [S, M, L] (в разработке)
+- <b>icon {String}</b> - Название иконки из списка выше (без icon-)
+- <b>type {String}</b> - Цветовая схема [Surface, Primary, Secondary, Tetriary]
+- <b>fun {Function}</b> - Функция выполняемая по нажатию
+
+Использование в коде
+```vue
+<yuv-icon-button
+    class="Components-Button"
+    :fun="testClick"
+    icon="x"
+    type="Primary"
+/>
+```
+
 ### yuv-input
 Компонент input (со встроенной валидацией вводимых данных)
 

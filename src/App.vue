@@ -49,6 +49,32 @@
         :fun="testClick"
       />
     </div>
+    <div class="Components-Block" style="justify-content: flex-start">
+      <yuv-icon-button
+        class="Components-Button"
+        :fun="testClick"
+        icon="x"
+        type="Surface"
+      />
+      <yuv-icon-button
+        class="Components-Button"
+        :fun="testClick"
+        icon="x"
+        type="Primary"
+      />
+      <yuv-icon-button
+        class="Components-Button"
+        :fun="testClick"
+        icon="x"
+        type="Secondary"
+      />
+      <yuv-icon-button
+        class="Components-Button"
+        :fun="testClick"
+        icon="x"
+        type="Tetriary"
+      />
+    </div>
     <div class="Components-Block">
       <yuv-button
         left-icon="check"
