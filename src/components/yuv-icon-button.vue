@@ -1,5 +1,6 @@
 <template>
   <button
+    @click="fun"
     class="YuvIconButton"
     :class="`YuvIconButton__Style__${type}`"
   >
