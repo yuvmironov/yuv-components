@@ -38,7 +38,7 @@ export default {
 
 <style lang="stylus" scoped>
 .yuvButton
-  font-family Manrope, sans-serif
+  font-family Roboto, sans-serif
   padding 10px 24px
   border-radius: 100px
   display flex
