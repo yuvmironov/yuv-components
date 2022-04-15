@@ -176,7 +176,7 @@ body[data-theme='dark'] {
 Компонент иконочной кнопки
 
 Параметры
-- <b>size {String}</b> - Размер [S, M, L] (в разработке)
+- <b>size {String}</b> - Размер [S, M, L]
 - <b>icon {String}</b> - Название иконки из списка выше (без icon-)
 - <b>type {String}</b> - Цветовая схема [Surface, Primary, Secondary, Tetriary]
 - <b>fun {Function}</b> - Функция выполняемая по нажатию

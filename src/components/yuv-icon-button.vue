@@ -2,7 +2,7 @@
   <button
     @click="fun"
     class="YuvIconButton"
-    :class="`YuvIconButton__Style__${type}`"
+    :class="`YuvIconButton__Style__${type} YuvIconButton__Size__${size}`"
   >
     <div class="YuvIconButton-StateLayer"></div>
     <span class="YuvIconButton-Icon icon" :class="`icon-${icon}`"/>
@@ -23,6 +23,10 @@ export default {
     type: {
       type: String,
       default: 'Surface'
+    },
+    size: {
+      type: String,
+      default: 'L'
     }
   }
 }
@@ -30,22 +34,34 @@ export default {
 
 <style lang="stylus">
 .YuvIconButton
-  width 56px
-  height 56px
-  border-radius 16px
   box-shadow 0 4px 8px 3px var(--primary_opaciti_015)
   position relative
+  &__Size
+    &__M
+      width 56px
+      height 56px
+      border-radius 16px
+      font-size var(--headline-medium)
+      & > .YuvIconButton-StateLayer
+        width 56px
+        height 56px
+        border-radius 16px
+    &__L
+      width 96px
+      height 96px
+      border-radius 28px
+      font-size var(--headline-large)
+      & > .YuvIconButton-StateLayer
+        width 96px
+        height 96px
+        border-radius 28px
   &-StateLayer
     position absolute
-    width 56px
-    height 56px
-    border-radius 16px
     top 0
     left 0
     z-index 10
   &-Icon
     color var(--on-surface)
-    font-size var(--title-large)
   &__Style
     &__Surface
       background linear-gradient(0deg, rgba(103, 80, 164, 0.11), rgba(103, 80, 164, 0.11)), var(--surface)
