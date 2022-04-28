@@ -98,6 +98,7 @@
         id="select"
         label="Выберете цвет"
         v-model="selectValue"
+        :disabled="true"
         :options="
           [
             {

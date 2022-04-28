@@ -82,4 +82,8 @@ export default {
       & ~ .YuvSelect-Label
         background-color var(--background)
         transform scale(.85) translateY(-1.05rem) translateX(.05rem)
+    &:disabled
+      & ~ .YuvSelect-Label
+        background-color var(--background)
+        transform scale(.85) translateY(-1.05rem) translateX(.05rem)
 </style>
