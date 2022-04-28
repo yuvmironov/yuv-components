@@ -5,6 +5,7 @@
       class="YuvSelect-Select"
       :value="modelValue"
       @change="selected"
+      :disabled="disabled"
     >
       <option v-for="option in options"
         :key="option.id"
@@ -31,6 +32,10 @@ export default {
     options: {
       type: Array,
       required: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
     modelValue: {}
   },
